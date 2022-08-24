@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+.flexbox{
+    display: inline-block;
+    flex-flow: column;
+    border:3px solid #8d8d8d;
+    padding: 10px;
+}
+
+.flexbox div{
+    display: flex;
+    padding: 10px;
+}
+
+h1{
+    padding-bottom:20px;
+    color: #3c3c3c;
+}
+
+.btn{
+    margin:0% 0% 2% 40%;
+    height: 30px;
+    width: 70px;
+}
+
+.joho{
+    display: inline-block;
+    border:3px solid #8d8d8d;
+    padding: 10px;
+}
