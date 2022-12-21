@@ -1,45 +1,40 @@
-<?php 
+<?php
 $name = $_POST["name"];
+$tel = $_POST["tel"];
 $email = $_POST["email"];
 $form = $_POST["form"];
+
+$errors = [];
+
+if(empty($name)){
+    $errors[] = "名前が未入力です。";
+}
+
+if(empty($tel)){
+    $errors[] = "携帯電話番号が未入力です。";
+}
+
+if(empty($email)){
+    $errors[] = "メールアドレスが未入力です。";
+}
+
+
+if(empty($form)){
+    $errors[] = "内容が未入力です。";
+}
+
+if(count($errors)>0){
+    require_once("view/indexHtml.php");
+    exit;
+}
+
+$conn = new PDO("mysql:dbname=PETA_DB;host=localhost", "ochiai", "mymy567my");
+$stm = $conn->prepare("insert into CONTACT(ID,NAME,EMAIL,TEL,CONTENTS,CREATED_AT) value(?,?,?,?,?,?)");
+$stm->execute([$id, $name, $email, $tel, $contents, date("Y-m-d H:i:s")]);
+
+require_once("view/completeHtml.php");
+
+unset($stm, $conn);
+
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>お問い合わせ完了</title>
-        <link href="styl.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>お問い合わせ完了</h1>
-        <p>お問い合わせが完了いたしました。</p>
-        <p>内容をご確認ください。</p>
-        
-        <div class="joho">
-            <div>
-            <span>名前:</span>
-            <?php 
-            echo $name;
-            ?>
-            </div>
-
-            <div>
-            <span>メールアドレス:</span>
-            <?php
-            echo $email;
-            ?>
-            </div>
-
-            <div>
-            <span>お問い合わせ内容:</span>
-            <?php
-            echo $form;
-            ?>
-            </div>
-        </div>
-        
-    </body>
-</html>
