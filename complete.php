@@ -36,5 +36,4 @@ require_once("view/completeHtml.php");
 
 unset($stm, $conn);
 
-
 ?>
