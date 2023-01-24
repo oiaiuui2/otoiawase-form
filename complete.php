@@ -2,7 +2,7 @@
 $name = $_POST["name"];
 $tel = $_POST["tel"];
 $email = $_POST["email"];
-$form = $_POST["form"];
+$contents = $_POST["contents"];
 
 $errors = [];
 
@@ -18,8 +18,7 @@ if(empty($email)){
     $errors[] = "メールアドレスが未入力です。";
 }
 
-
-if(empty($form)){
+if(empty($contents)){
     $errors[] = "内容が未入力です。";
 }
 

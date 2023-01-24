@@ -35,7 +35,7 @@
 
                 <div>
                 <lavel>内容</lavel>
-                <textarea name="form" rows="15" cols="40" placeholder="お問い合わせ内容を入力してください"><?php echo $form; ?></textarea>
+                <textarea name="contents" rows="15" cols="40" placeholder="お問い合わせ内容を入力してください"><?php echo $contents; ?></textarea>
                 </div>
                 <input class="btn" type="submit">
             </div>

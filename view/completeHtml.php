@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,7 +37,7 @@
             <div>
             <span>お問い合わせ内容:</span>
             <?php
-            echo $form;
+            echo $contents;
             ?>
             </div>
         </div>
