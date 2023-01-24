@@ -1,5 +1,4 @@
 <?php
-
 if (empty($_POST['btn_login'])){
     require_once("../view/loginHtml.php");
     
@@ -28,6 +27,5 @@ else{
     }  
     }
     unset($conn);
-
 ?>
 
